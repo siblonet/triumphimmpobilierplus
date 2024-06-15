@@ -9,10 +9,23 @@ const modala_wrapa_job_open_view = document.querySelector('.modala_wrapa_job_ope
 const job_display = document.getElementById('job_display');*/
 
 
+const house_properties = {
+    _id: "4970kh567rqsax",
+    person: { fullname: 'John Kokar', ima: "ddjks" },
+    image: [{}, {}, {}],
+    categorie: "",
+    ville: "",
+    address: "",
+    prix: 7200000,
+    meusure: "190",
+}
+
+
 const DisplayHouses = async () => {
     /*const job_content = await GetAllJob();
-    const connected_id = sessionStorage.getItem('_id');*/
-    const houses_content = [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}];
+        const connected_id = sessionStorage.getItem('_id');
+    */
+    const houses_content = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
 
     const houses_rendering = document.getElementById('houses_rendering');
     houses_rendering.innerHTML = "";
@@ -75,8 +88,8 @@ const DisplayHouses = async () => {
                         class="qodef-e-info-item-link qodef--property-type"
                         href="property-type/sell/index.html">
                         <span
-                            class="qodef-e-info-item-text">En
-                            vente</span>
+                            class="qodef-e-info-item-text">
+                            En vente</span>
                     </a>
                 </div>
 
@@ -262,73 +275,7 @@ const DisplayHouses = async () => {
                                 class="qodef--measure-unit">m<sup>2</sup></span>
                         </span>
                     </div>
-                    <div
-                        class="qodef-e-info-item qodef--bedrooms">
-                        <span
-                            class="qodef-e-info-item-icon">
-                            <svg class="qodef-ei-svg-icon qodef--bedrooms"
-                                width="24.017"
-                                height="17.998"
-                                viewBox="0 0 24.017 17.998">
-                                <path
-                                    d="M21.333 8.065H2.683a.355.355 0 0 1-.355-.355V3.059A3.063 3.063 0 0 1 5.387 0h13.242a3.063 3.063 0 0 1 3.059 3.059V7.71a.355.355 0 0 1-.355.355Zm-18.295-.71h17.94v-4.3A2.352 2.352 0 0 0 18.629.706H5.387a2.352 2.352 0 0 0-2.349 2.349Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M12.008 8.065H4.421a.355.355 0 0 1-.355-.355V4.719a2.128 2.128 0 0 1 2.125-2.125h4.046a2.128 2.128 0 0 1 2.125 2.125V7.71a.355.355 0 0 1-.354.355Zm-7.232-.71h6.877V4.719a1.417 1.417 0 0 0-1.415-1.415H6.192a1.417 1.417 0 0 0-1.415 1.415Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M19.59 8.065h-7.587a.355.355 0 0 1-.355-.355V4.719a2.128 2.128 0 0 1 2.125-2.125h4.046a2.127 2.127 0 0 1 2.125 2.125V7.71a.355.355 0 0 1-.354.355Zm-7.232-.71h6.877V4.719a1.417 1.417 0 0 0-1.415-1.415h-4.046a1.417 1.417 0 0 0-1.415 1.415Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M23.662 16.844H.355A.355.355 0 0 1 0 16.489v-5.717a3.421 3.421 0 0 1 3.417-3.417h17.182a3.421 3.421 0 0 1 3.418 3.417v5.717a.355.355 0 0 1-.355.355Zm-22.951-.71h22.6v-5.362a2.71 2.71 0 0 0-2.707-2.707H3.417a2.71 2.71 0 0 0-2.706 2.707Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M2.637 17.997a.355.355 0 0 1-.355-.355v-1.14a.355.355 0 1 1 .71 0v1.14a.355.355 0 0 1-.355.355Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M21.333 17.997a.355.355 0 0 1-.355-.355v-1.14a.355.355 0 1 1 .71 0v1.14a.355.355 0 0 1-.355.355Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </span>
-                        <span
-                            class="qodef-e-info-item-text">
-                            4 </span>
-                    </div>
-                    <div
-                        class="qodef-e-info-item qodef--bathrooms">
-                        <span
-                            class="qodef-e-info-item-icon">
-                            <svg class="qodef-ei-svg-icon qodef--bathrooms"
-                                width="28.528"
-                                height="21.994"
-                                viewBox="0 0 28.528 21.994">
-                                <path
-                                    d="M21.283 20.649H7.252c-2.119 0-5.529-3.517-5.529-5.7V12.36a.383.383 0 0 1 .383-.383h24.316a.383.383 0 0 1 .383.378v2.593c0 2.184-3.406 5.701-5.522 5.701Zm-18.8-7.909v2.207c0 1.8 3.028 4.937 4.764 4.937h14.031c1.734 0 4.757-3.138 4.757-4.937v-2.206Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M5.057 10.882a.383.383 0 0 1-.383-.383V3.382A3.5 3.5 0 0 1 5.6.853a2.921 2.921 0 0 1 2.094-.854 2.979 2.979 0 0 1 3.045 2.755.38225907.38225907 0 1 1-.762.062A2.228 2.228 0 0 0 7.694.764a2.162 2.162 0 0 0-1.551.627 2.759 2.759 0 0 0-.7 1.991v7.117a.383.383 0 0 1-.386.383Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M27.525 12.74H1.003a1 1 0 0 1-1-1v-.377a1 1 0 0 1 1-1h26.522a1 1 0 0 1 1 1v.377a1 1 0 0 1-1 1ZM1.003 11.123a.24.24 0 0 0-.238.237v.377a.241.241 0 0 0 .238.237h26.522a.241.241 0 0 0 .238-.237v-.377a.24.24 0 0 0-.238-.237Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M12.648 5.466a.383.383 0 0 1-.382-.383 1.917 1.917 0 0 0-3.833 0 .383.383 0 0 1-.765 0 2.682 2.682 0 1 1 5.363 0 .383.383 0 0 1-.383.383Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M13.505 5.824H7.194a.383.383 0 1 1 0-.765h6.311a.383.383 0 0 1 0 .765Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M5.917 21.995a.383.383 0 0 1-.293-.629l1.128-1.344a.383.383 0 0 1 .586.492l-1.129 1.344a.38.38 0 0 1-.292.137Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M22.61 21.995a.38.38 0 0 1-.293-.137l-1.129-1.344a.383.383 0 0 1 .586-.492l1.131 1.344a.383.383 0 0 1-.293.629Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </span>
-                        <span
-                            class="qodef-e-info-item-text">
-                            3 </span>
-                    </div>
+                    
                 </div>
             </div>
         </div>
