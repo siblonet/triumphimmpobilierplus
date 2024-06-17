@@ -11,13 +11,74 @@ const job_display = document.getElementById('job_display');*/
 
 const house_properties = {
     _id: "4970kh567rqsax",
-    person: { fullname: 'John Kokar', ima: "ddjks" },
-    image: [{}, {}, {}],
-    categorie: "",
-    ville: "",
-    address: "",
+    person: {
+        fullname: 'John Kokar',
+        ima: "ddjks",
+        phone1: "",
+        phone2: "",
+        wapphone: "",
+        mail: "",
+        role: "owner",
+        address: "560 3rd Ave, New York, NY 10016, USA"
+    },
+    image: [{}, {}, {}, {}, {}],
+    categorie: "En vente",
+    type: "Villas",
+    ville: "Abidjan",
+    address: "Riviera Golf",
     prix: 7200000,
     meusure: "190",
+    description: "190",
+    Property_details:{
+
+        meusure: "190",
+        Bedrooms: 4,
+        Bathrooms: 2,
+        Floor: "Ground",
+        Additional_Space: "Basement",
+        Furnishing: "",
+        CeilingHeight: "",
+        ConstructionYear: "2002",
+        Renovation: "2000"
+    },
+    Outdoor_features: {
+        Garage: "Yes",
+        Garden: "50m2",
+        SwimmingPool: "3x5x1.5m",
+        Security: "3 Cameras",
+        Parking: "Yes",
+        DisabledAccess: "Ramp",
+        Fence: "Wood fence",
+        Pet_Friendly: "Yes"
+
+    },
+    Floorplans: [{}, {}, {}, {}, {}],
+
+
+    Property_utility: {
+        Heating: "Natural Gas",
+        Air_Condition: "Yes",
+        Fireplace: "",
+        Elevator: "",
+        Ventilation: "",
+        Intercom: "",
+        WindowType: "",
+        CableTV: "",
+        WiFi: ""
+    },
+
+    What_nearby: {
+        School: "1.2km",
+        Hospital: "1.5km",
+        Phamacy: "1.5km",
+        University: "3km",
+        Metro_station: "0.1km",
+        Grocery_center: "0.5km",
+        Gym_wellness: "0.8km",
+        Market: "1.7km",
+        River: "0.2km",
+
+    }
 }
 
 
@@ -45,7 +106,7 @@ const DisplayHouses = async () => {
                         <a style="width: 460px; height: 300px;"
                             class="swiper-slide"
                             itemprop="url"
-                            href="property/south-sun-house/index.html">
+                            href="property/details_view/index.html">
 
                             <img style="height: 100%; width: 100%;"
                                 loading="lazy"
@@ -58,7 +119,7 @@ const DisplayHouses = async () => {
                         <a style="width: 460px; height: 300px;"
                             class="swiper-slide"
                             itemprop="url"
-                            href="property/south-sun-house/index.html">
+                            href="property/details_view/index.html">
 
                             <img style="height: 100%; width: 100%;"
                                 loading="lazy"
@@ -71,7 +132,7 @@ const DisplayHouses = async () => {
                         <a style="width: 460px; height: 300px;"
                             class="swiper-slide"
                             itemprop="url"
-                            href="property/south-sun-house/index.html">
+                            href="property/details_view/index.html">
                             <img style="height: 100%; width: 100%;"
                                 loading="lazy"
                                 decoding="async"
@@ -86,7 +147,7 @@ const DisplayHouses = async () => {
                 <div class="qodef-e-info-item qodef--type">
                     <a itemprop="url"
                         class="qodef-e-info-item-link qodef--property-type"
-                        href="property-type/sell/index.html">
+                        href="property/details_view/index.html">
                         <span
                             class="qodef-e-info-item-text">
                             En vente</span>
@@ -163,7 +224,7 @@ const DisplayHouses = async () => {
                 <div class="qodef-e-author">
                     <div class="qodef-e-author-image">
                         <a itemprop="url"
-                            href="author/steve-parker/index.html">
+                            href="property/details_view/index.html">
                             <img loading="lazy"
                                 decoding="async"
                                 src="https://storage.googleapis.com/seeme-7a462.appspot.com/4f780184-c542-4e31-b69a-51092516ab8fwe.png"
@@ -174,7 +235,7 @@ const DisplayHouses = async () => {
                     </div>
                     <a itemprop="url"
                         class="qodef-e-author-name"
-                        href="author/steve-parker/index.html">
+                        href="property/details_view/index.html">
                         John Kokar
                     </a>
                 </div>
@@ -201,7 +262,7 @@ const DisplayHouses = async () => {
                             class="qodef-e-info-item qodef--category">
                             <a itemprop="url"
                                 class="qodef-e-info-item-link qodef--property-category"
-                                href="property-category/villas/index.html">
+                                href="property/details_view/index.html">
                                 <span
                                     class="qodef-e-info-item-text">Villas</span>
                             </a>
@@ -212,7 +273,7 @@ const DisplayHouses = async () => {
                             class="qodef-e-info-item qodef--location">
                             <a itemprop="url"
                                 class="qodef-e-info-item-link qodef--property-location"
-                                href="property-location/brooklyn/index.html">
+                                href="property/details_view/index.html">
                                 <span
                                     class="qodef-e-info-item-text">Abidjan</span>
                             </a>
@@ -225,7 +286,7 @@ const DisplayHouses = async () => {
                     class="qodef-e-title entry-title">
                     <a itemprop="url"
                         class="qodef-e-title-link"
-                        href="property/south-sun-house/index.html">
+                        href="property/details_view/index.html">
                         Riviera Golf
                     </a>
                 </h4>
