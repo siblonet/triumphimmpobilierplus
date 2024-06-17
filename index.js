@@ -100,7 +100,7 @@ const DisplayHouses = async () => {
     /*const job_content = await GetAllJob();
         const connected_id = sessionStorage.getItem('_id');
     */
-    const houses_content = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+    const houses_content = [{}];
 
     const houses_rendering = document.getElementById('houses_rendering');
     houses_rendering.innerHTML = "";
