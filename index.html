@@ -269,10 +269,21 @@
 			color: #fff;
 			text-decoration: none
 		}
-		#qodef-main-rev-holder{
-			height: 10px;
-			overflow: hidden;
-			transition: height 5s ease;
+
+		.diplanot {
+			display: none;
+		}
+
+		@media only screen and (max-width:992px) {
+			.diplanot {
+				display: block;
+			}
+
+			#qodef-main-rev-holder {
+				height: 10px;
+				overflow: hidden;
+				transition: height 0.5s ease;
+			}
 		}
 	</style>
 	<link rel="stylesheet" id="titan-adminbar-styles-css"
@@ -948,7 +959,7 @@
 				<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ chercher start @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 				<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ chercher start @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 
-				<div class="qodef-widget-holder qodef--one">
+				<div class="qodef-widget-holder qodef--one diplanot">
 					<div id="newhome_membership_login_opener-3"
 						class="widget widget_newhome_membership_login_opener qodef-mobile-header-widget-area-one"
 						data-area="mobile-header">
@@ -1029,7 +1040,8 @@
 								class="elementor elementor-2116">
 
 
-								<section class="opencherche elementor-section elementor-top-section elementor-element elementor-element-f27a95c elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+								<section
+									class="opencherche elementor-section elementor-top-section elementor-element elementor-element-f27a95c elementor-section-full_width elementor-section-height-default elementor-section-height-default"
 									data-id="f27a95c" data-element_type="section" id="qodef-main-rev-holder">
 									<div class="elementor-container elementor-column-gap-no">
 										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-eb355e6"
