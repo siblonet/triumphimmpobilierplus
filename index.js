@@ -8,6 +8,20 @@ const modala_job_open_view = document.querySelector('.modala_job_open_view');
 const modala_wrapa_job_open_view = document.querySelector('.modala_wrapa_job_open_view');
 const job_display = document.getElementById('job_display');*/
 
+function openCherche(params) {
+    //const searchbar = document.getElementById('qodef-main-rev-holder');
+    const searchbar = document.querySelector('.opencherche')
+    //const searchInput = document.getElementById('searchInput');
+    searchbar.style.display = 'block';
+    searchbar.style.height = '100%';
+
+    /*searchInput.style.display = 'block';
+    searchInput.addEventListener('blur', () => {
+        searchbar.style.width = '40px';
+        searchInput.style.display = 'none';
+        searchInput.value = '';
+    });*/
+}
 
 const house_properties = {
     _id: "4970kh567rqsax",
@@ -29,7 +43,7 @@ const house_properties = {
     prix: 7200000,
     meusure: "190",
     description: "190",
-    Property_details:{
+    Property_details: {
         meusure: "190",
         Bedrooms: 4,
         Bathrooms: 2,
@@ -40,7 +54,7 @@ const house_properties = {
         ConstructionYear: "2002",
         Renovation: "2000"
     },
-    
+
     Outdoor_features: {
         Garage: "Yes",
         Garden: "50m2",
@@ -366,17 +380,17 @@ DisplayHouses();
                                 </div>
 
                                 <div>
-                                    <h5>${job.role}</h5>
-                                    <p class="text-muted">${job_peop} persone(s) invité</p>
+                                    <h5>${"job.role"}</h5>
+                                    <p class="text-muted">${"job_peop"} persone(s) invité</p>
                                 </div>
                             </div>
-                            ${connected_id === job.recruter ?
+                            ${"connected_id" === "job.recruter" ?
         `
                                 <div class="action">
-                                    <button class="btn btn-primary" onclick="OpenModifieJob('${job._id}')">
+                                    <button class="btn btn-primary" onclick="OpenModifieJob('${"job._id"}')">
                                         Modifier
                                     </button>
-                                    <button class="btn"  onclick="DeleteJob(${job._id})">
+                                    <button class="btn"  onclick="DeleteJob(${"job._id"})">
                                         Annuler
                                     </button>
                                 </div>
@@ -385,10 +399,10 @@ DisplayHouses();
         :
         `
                                 <div class="action">
-                                    <button class="btn btn-primary" onclick="OpenJob('${job._id}')">
+                                    <button class="btn btn-primary" onclick="OpenJob('${"job._id"}')">
                                         Accepter
                                     </button>
-                                    <button class="btn" onclick="RejectJob(${job._id})">
+                                    <button class="btn" onclick="RejectJob(${"job._id"})">
                                         Refuser
                                     </button>
                                 </div>
