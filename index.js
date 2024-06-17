@@ -30,7 +30,6 @@ const house_properties = {
     meusure: "190",
     description: "190",
     Property_details:{
-
         meusure: "190",
         Bedrooms: 4,
         Bathrooms: 2,
@@ -41,6 +40,7 @@ const house_properties = {
         ConstructionYear: "2002",
         Renovation: "2000"
     },
+    
     Outdoor_features: {
         Garage: "Yes",
         Garden: "50m2",
