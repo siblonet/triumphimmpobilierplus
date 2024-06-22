@@ -24,19 +24,35 @@ function openCherche(params) {
 }
 
 const house_properties = {
-    _id: "4970kh567rqsax",
+    _id: "4970kh567i5aod0es2a4aa30",
     person: {
         fullname: 'John Kokar',
-        ima: "ddjks",
-        phone1: "",
-        phone2: "",
-        wapphone: "",
-        mail: "",
+        ima: "https://storage.googleapis.com/seeme-7a462.appspot.com/4f780184-c542-4e31-b69a-51092516ab8fwe.png",
+        phone1: "0554468221",
+        phone2: "0713000018",
+        wapphone: "0103470087",
+        mail: "princedibloni4@gmail.com",
         role: "owner",
-        address: "560 3rd Ave, New York, NY 10016, USA"
+        address: "Rue I-65, Riviera Bonomum, cocody abidjan, CI"
     },
-    image: [{}, {}, {}, {}, {}],
-    categorie: "En vente",
+    image: [
+        {
+            ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/list-sidebar-img-1.jpg"
+        },
+        {
+            ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung03-600x473.jpg"
+        },
+        {
+            ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung02-600x473.jpg"
+        },
+        {
+            ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung04-600x473.jpg"
+        },
+        {
+            ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung06-600x473.jpg"
+        }
+    ],
+    categorie: "En location",
     type: "Villas",
     ville: "Abidjan",
     address: "Riviera Golf",
@@ -66,8 +82,14 @@ const house_properties = {
         Pet_Friendly: "Yes"
 
     },
-    Floorplans: [{}, {}, {}, {}, {}],
-
+    Floorplans: [
+        {
+            ima: "wp-content/uploads/2023/03/south-sunlight_floor1.jpg"
+        },
+        {
+            ima: "wp-content/uploads/2023/03/south-sunlight_floor2.jpg"
+        }
+    ],
 
     Property_utility: {
         Heating: "Natural Gas",
@@ -100,7 +122,7 @@ const DisplayHouses = async () => {
     /*const job_content = await GetAllJob();
         const connected_id = sessionStorage.getItem('_id');
     */
-    const houses_content = [{}];
+    const houses_content = [house_properties];
 
     const houses_rendering = document.getElementById('houses_rendering');
     houses_rendering.innerHTML = "";
@@ -120,38 +142,38 @@ const DisplayHouses = async () => {
                         <a style="width: 460px; height: 300px;"
                             class="swiper-slide"
                             itemprop="url"
-                            href="property/details_view/index.html">
+                            href="property/details_view/index.html?ov=${house._id}">
 
                             <img style="height: 100%; width: 100%;"
                                 loading="lazy"
                                 decoding="async"
-                                src="wp-content/uploads/2023/03/modern-family-house-03-841x533.jpg"
-                                alt="w"
+                                src="${house.image[0].ima}"
+                                alt="A"
                                 data-ratio="1.5333333333333" />
                         </a>
 
                         <a style="width: 460px; height: 300px;"
                             class="swiper-slide"
                             itemprop="url"
-                            href="property/details_view/index.html">
+                            href="property/details_view/index.html?ov=${house._id}">
 
                             <img style="height: 100%; width: 100%;"
                                 loading="lazy"
                                 decoding="async"
-                                src="wp-content/uploads/2023/03/marble-house-01.jpg"
-                                alt="w"
+                                src="${house.image[1].ima}"
+                                alt="B"
                                 data-ratio="1.5333333333333" />
                         </a>
 
                         <a style="width: 460px; height: 300px;"
                             class="swiper-slide"
                             itemprop="url"
-                            href="property/details_view/index.html">
+                            href="property/details_view/index.html?ov=${house._id}">
                             <img style="height: 100%; width: 100%;"
                                 loading="lazy"
                                 decoding="async"
-                                src="wp-content/uploads/2023/03/main-home-property.jpg"
-                                alt="w"
+                                src="${house.image[2].ima}"
+                                alt="C"
                                 data-ratio="1.5333333333333" />
                         </a>
 
@@ -161,7 +183,7 @@ const DisplayHouses = async () => {
                 <div class="qodef-e-info-item qodef--type">
                     <a itemprop="url"
                         class="qodef-e-info-item-link qodef--property-type"
-                        href="property/details_view/index.html">
+                        href="property/details_view/index.html?ov=${house._id}">
                         <span
                             class="qodef-e-info-item-text">
                             En vente</span>
@@ -238,10 +260,10 @@ const DisplayHouses = async () => {
                 <div class="qodef-e-author">
                     <div class="qodef-e-author-image">
                         <a itemprop="url"
-                            href="property/details_view/index.html">
+                            href="property/details_view/index.html?ov=${house._id}">
                             <img loading="lazy"
                                 decoding="async"
-                                src="https://storage.googleapis.com/seeme-7a462.appspot.com/4f780184-c542-4e31-b69a-51092516ab8fwe.png"
+                                src="${house.person.ima}"
                                 alt="b" width="50"
                                 height="50"
                                 data-ratio="1" />
@@ -249,8 +271,8 @@ const DisplayHouses = async () => {
                     </div>
                     <a itemprop="url"
                         class="qodef-e-author-name"
-                        href="property/details_view/index.html">
-                        John Kokar
+                        href="property/details_view/index.html?ov=${house._id}">
+                        ${house.person.fullname}
                     </a>
                 </div>
             </div>
@@ -276,7 +298,7 @@ const DisplayHouses = async () => {
                             class="qodef-e-info-item qodef--category">
                             <a itemprop="url"
                                 class="qodef-e-info-item-link qodef--property-category"
-                                href="property/details_view/index.html">
+                                href="property/details_view/index.html?ov=${house._id}">
                                 <span
                                     class="qodef-e-info-item-text">Villas</span>
                             </a>
@@ -287,7 +309,7 @@ const DisplayHouses = async () => {
                             class="qodef-e-info-item qodef--location">
                             <a itemprop="url"
                                 class="qodef-e-info-item-link qodef--property-location"
-                                href="property/details_view/index.html">
+                                href="property/details_view/index.html?ov=${house._id}">
                                 <span
                                     class="qodef-e-info-item-text">Abidjan</span>
                             </a>
@@ -300,7 +322,7 @@ const DisplayHouses = async () => {
                     class="qodef-e-title entry-title">
                     <a itemprop="url"
                         class="qodef-e-title-link"
-                        href="property/details_view/index.html">
+                        href="property/details_view/index.html?ov=${house._id}">
                         Riviera Golf
                     </a>
                 </h4>
