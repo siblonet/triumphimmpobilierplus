@@ -245,16 +245,13 @@ async function Initor() {
     try {
         await clearHouses();
         const houses = await requesttoBackend('GET', 'triumph');
-        console.log(houses)
         if (houses) {
             await PostHouses(houses);
             house_properties = houses
         } else {
-            await PostHouses(house_properties);
         }
     } catch (error) {
         console.log("error :", error);
-        await PostHouses(house_properties);
     }
 }
 DisplayHouses()

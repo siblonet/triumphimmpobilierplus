@@ -12,7 +12,6 @@ const retriva = getUrlParameter('ov');
 if (!retriva || retriva.length < 5) {
     window.location.href = "/"
 } else {
-    console.log(retriva)
     populateReal(retriva);
     /*document.getElementById('ido').value = retriva;*/
 }
