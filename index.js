@@ -58,7 +58,7 @@ const house_properties = {
     address: "Riviera Golf",
     prix: 7200000,
     meusure: "190",
-    description: "190",
+    description: "Très belle maison avec une très belle vue, calme et luxueuse, et une sécurité totale.",
     Property_details: {
         meusure: "190",
         Bedrooms: 4,
@@ -185,8 +185,7 @@ const DisplayHouses = async () => {
                         class="qodef-e-info-item-link qodef--property-type"
                         href="property/details_view/index.html?ov=${house._id}">
                         <span
-                            class="qodef-e-info-item-text">
-                            En vente</span>
+                            class="qodef-e-info-item-text">En vente</span>
                     </a>
                 </div>
 
@@ -214,9 +213,10 @@ const DisplayHouses = async () => {
                                 </svg>
                             </span>
                             <span
-                                class="qodef-m-tooltip">Ajouter
-                                à la liste de
-                                souhaits</span>
+                                class="qodef-m-tooltip">
+                                Ajouter à la liste de souhaits
+                            </span>
+
                             <span class="qodef-m-spinner">
                                 <svg width="20" height="20"
                                     viewBox="0 0 50 50">
@@ -300,7 +300,7 @@ const DisplayHouses = async () => {
                                 class="qodef-e-info-item-link qodef--property-category"
                                 href="property/details_view/index.html?ov=${house._id}">
                                 <span
-                                    class="qodef-e-info-item-text">Villas</span>
+                                    class="qodef-e-info-item-text">${house.type}</span>
                             </a>
                         </div>
                         <span
@@ -311,7 +311,7 @@ const DisplayHouses = async () => {
                                 class="qodef-e-info-item-link qodef--property-location"
                                 href="property/details_view/index.html?ov=${house._id}">
                                 <span
-                                    class="qodef-e-info-item-text">Abidjan</span>
+                                    class="qodef-e-info-item-text">${house.ville}</span>
                             </a>
                         </div>
                         <span
@@ -323,18 +323,17 @@ const DisplayHouses = async () => {
                     <a itemprop="url"
                         class="qodef-e-title-link"
                         href="property/details_view/index.html?ov=${house._id}">
-                        Riviera Golf
+                        ${house.address}
                     </a>
                 </h4>
-                <p itemprop="description"
-                    class="qodef-e-excerpt">Très belle
-                    maison avec une très belle vue, calme et
-                    luxueuse, et une sécurité totale.</p>
+                <p itemprop="description" class="qodef-e-excerpt">
+                    ${house.description}
+                    </p>
                 <div class="qodef-e-bottom-info">
                     <div class="qodef-e-price">
                         <span
                             class="qodef-e-price-amount qodef-h5">
-                            7.900.000 F</span>
+                            ${house.prix} F</span>
                     </div>
                     <div
                         class="qodef-e-info-item qodef--size">
@@ -368,7 +367,7 @@ const DisplayHouses = async () => {
                         </span>
                         <span
                             class="qodef-e-info-item-text">
-                            290 <span
+                            ${house.meusure}<span
                                 class="qodef--measure-unit">m<sup>2</sup></span>
                         </span>
                     </div>
