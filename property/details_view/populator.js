@@ -39,8 +39,8 @@ async function populateReal(hous_id) {
 
     categoryid.innerText = house_det.categorie;
     typeid.innerText = house_det.type+" "+house_det.address;
-    priceid.innerText = house_det.prix;
-    priceida.innerText = house_det.prix;
+    priceid.innerText = house_det.prix+" F";
+    priceida.innerText = house_det.prix+" F";
     desciptionid.innerText = house_det.description;
 
 
