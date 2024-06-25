@@ -41,7 +41,7 @@ async function GetAllHouses() {
 
         GHStore.openCursor().onsuccess = (event) => {
             const cursor = event.target.result;
-            if (cursor && cursor.value.quantity > 0) {
+            if (cursor) {
                 houses.push(cursor.value);
                 cursor.continue();
             } else {

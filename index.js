@@ -9,29 +9,154 @@ const modala_wrapa_job_open_view = document.querySelector('.modala_wrapa_job_ope
 const job_display = document.getElementById('job_display');*/
 
 function openCherche(params) {
-    //const searchbar = document.getElementById('qodef-main-rev-holder');
-    const searchbar = document.querySelector('.opencherche')
-    //const searchInput = document.getElementById('searchInput');
-    searchbar.style.display = 'block';
-    searchbar.style.height = '100%';
+	//const searchbar = document.getElementById('qodef-main-rev-holder');
+	const searchbar = document.querySelector('.opencherche')
+	//const searchInput = document.getElementById('searchInput');
+	searchbar.style.display = 'block';
+	searchbar.style.height = '100%';
 
-    /*searchInput.style.display = 'block';
-    searchInput.addEventListener('blur', () => {
-        searchbar.style.width = '40px';
-        searchInput.style.display = 'none';
-        searchInput.value = '';
-    });*/
+	/*searchInput.style.display = 'block';
+	searchInput.addEventListener('blur', () => {
+		searchbar.style.width = '40px';
+		searchInput.style.display = 'none';
+		searchInput.value = '';
+	});*/
 }
 
-let house_properties = [];
 
-async function DisplayHouses() {
-    const houses_rendering = document.getElementById('houses_rendering');
-    houses_rendering.innerHTML = "";
-    await Initor();
 
-    house_properties.forEach((house, index) => {
-        const hous_html = `
+function loadSwiper(urlsdop) {
+	// Load CSSa
+	var link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.href = urlsdop.cssa;
+	link.media = "all";
+	link.id = "swiper-css";
+	document.head.appendChild(link);
+
+	// Load CSSb
+	var linka = document.createElement('link');
+	linka.rel = 'stylesheet';
+	linka.href = urlsdop.cssb;
+	linka.media = "all";
+	linka.id = "newhome-main-css";
+	document.head.appendChild(linka);
+
+	// Load CSSc
+	var linkb = document.createElement('link');
+	linkb.rel = 'stylesheet';
+	linkb.href = urlsdop.cssc;
+	linkb.media = "all";
+	linkb.id = "newhome-core-style-css";
+	document.head.appendChild(linkb);
+
+	
+		// Load CSSd
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssd;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+		// Load CSSe
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.csse;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+	
+	
+		// Load CSSf
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssf;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+	
+	
+		// Load CSSg
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssg;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+		// Load CSSh
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssh;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+		// Load CSSi
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssi;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+	
+		// Load CSSj
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssj;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+		// Load CSSk
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssk;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+	
+		// Load CSSl
+		var linkb = document.createElement('link');
+		linkb.rel = 'stylesheet';
+		linkb.href = urlsdop.cssl;
+		linkb.media = "all";
+		linkb.id = "";
+		document.head.appendChild(linkb);
+
+
+
+
+
+	// Load JSa
+	var script = document.createElement('script');
+	script.src = urlsdop.jsa;
+	script.id = "jquery-core-js";
+	document.head.appendChild(script);
+
+	// Load JSb
+	var script = document.createElement('script');
+	script.src = urlsdop.jsb;
+	script.id = "jquery-migrate-js";
+	document.head.appendChild(script);
+
+	
+}
+
+
+async function DisplayHouse() {
+	const houses_rendering = document.getElementById('houses_rendering');
+	houses_rendering.innerHTML = "";
+
+	await clearHouses();
+	const houses = await requesttoBackend("GET", 'triumph');
+	await PostHouses(houses);
+	houses.forEach((house, index) => {
+		const hous_html = `
         <article class="qodef-e qodef-grid-item qodef-item--custom post-2460 property type-property status-publish has-post-thumbnail hentry property-type-sell property-category-villas property-location-brooklyn property-tag-swimming-pool" data-id="2460">
             <div class="qodef-e-inner">
                 <div class="qodef-e-image-holder">
@@ -150,151 +275,10 @@ async function DisplayHouses() {
         </article>
         `;
 
-        houses_rendering.innerHTML += hous_html;
-    });
+		houses_rendering.innerHTML += hous_html;
+	});
 
-    /*
-    
-        const house_do = {
-            person: "66773ca3320d8b6299fff03a",
-            image: [
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/list-sidebar-img-1.jpg"
-                },
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung03-600x473.jpg"
-                },
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung02-600x473.jpg"
-                },
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung04-600x473.jpg"
-                },
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/pine-forest-bung06-600x473.jpg"
-                }
-            ],
-            categorie: "En location",
-            type: "Villas",
-            ville: "Abidjan",
-            address: "Riviera Golf",
-            prix: 7200000,
-            meusure: "190",
-            description: "Très belle maison avec une très belle vue, calme et luxueuse, et une sécurité totale.",
-            Property_details: {
-                meusure: "190",
-                Bedrooms: 4,
-                Bathrooms: 2,
-                Floor: "Ground",
-                Additional_Space: "Basement",
-                Furnishing: "",
-                CeilingHeight: "",
-                ConstructionYear: "2002",
-                Renovation: "2000"
-            },
-    
-            Outdoor_features: {
-                Garage: "Yes",
-                Garden: "50m2",
-                SwimmingPool: "3x5x1.5m",
-                Security: "3 Cameras",
-                Parking: "Yes",
-                DisabledAccess: "Ramp",
-                Fence: "Wood fence",
-                Pet_Friendly: "Yes"
-    
-            },
-            Floorplans: [
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/south-sunlight_floor1.jpg"
-                },
-                {
-                    ima: "https://newhome.qodeinteractive.com/wp-content/uploads/2023/03/south-sunlight_floor2.jpg"
-                }
-            ],
-    
-            Property_utility: {
-                Heating: "Natural Gas",
-                Air_Condition: "Yes",
-                Fireplace: "",
-                Elevator: "",
-                Ventilation: "",
-                Intercom: "",
-                WindowType: "",
-                CableTV: "",
-                WiFi: ""
-            },
-    
-            What_nearby: {
-                School: "1.2km",
-                Hospital: "1.5km",
-                Phamacy: "1.5km",
-                University: "3km",
-                Metro_station: "0.1km",
-                Grocery_center: "0.5km",
-                Gym_wellness: "0.8km",
-                Market: "1.7km",
-                River: "0.2km",
-    
-            }
-        }
-        await requesttoBackend("POST", 'triumph', house_do)*/
+
 };
 
-async function Initor() {
-    try {
-        await clearHouses();
-        const houses = await requesttoBackend('GET', 'triumph');
-        if (houses) {
-            await PostHouses(houses);
-            house_properties = houses
-        } else {
-        }
-    } catch (error) {
-        console.log("error :", error);
-    }
-}
-DisplayHouses()
-
-
-
-    `
-<div class="request">
-                            <div class="info">
-                                <div class="profile-photo">
-                                    <img src="./assets/imo/job.png">
-                                </div>
-
-                                <div>
-                                    <h5>${"job.role"}</h5>
-                                    <p class="text-muted">${"job_peop"} persone(s) invité</p>
-                                </div>
-                            </div>
-                            ${"connected_id" === "job.recruter" ?
-        `
-                                <div class="action">
-                                    <button class="btn btn-primary" onclick="OpenModifieJob('${"job._id"}')">
-                                        Modifier
-                                    </button>
-                                    <button class="btn"  onclick="DeleteJob(${"job._id"})">
-                                        Annuler
-                                    </button>
-                                </div>
-
-                            `
-        :
-        `
-                                <div class="action">
-                                    <button class="btn btn-primary" onclick="OpenJob('${"job._id"}')">
-                                        Accepter
-                                    </button>
-                                    <button class="btn" onclick="RejectJob(${"job._id"})">
-                                        Refuser
-                                    </button>
-                                </div>
-
-                            `
-    }
-                            
-                        </div>
-`
+DisplayHouse()
