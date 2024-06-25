@@ -9,31 +9,31 @@ const modala_wrapa_job_open_view = document.querySelector('.modala_wrapa_job_ope
 const job_display = document.getElementById('job_display');*/
 
 function openCherche() {
-	//const searchbar = document.getElementById('qodef-main-rev-holder');
-	const searchbar = document.querySelector('.opencherche')
-	//const searchInput = document.getElementById('searchInput');
-	searchbar.style.display = 'block';
-	searchbar.style.height = '100%';
+    //const searchbar = document.getElementById('qodef-main-rev-holder');
+    const searchbar = document.querySelector('.opencherche')
+    //const searchInput = document.getElementById('searchInput');
+    searchbar.style.display = 'block';
+    searchbar.style.height = '100%';
 
-	/*searchInput.style.display = 'block';
-	searchInput.addEventListener('blur', () => {
-		searchbar.style.width = '40px';
-		searchInput.style.display = 'none';
-		searchInput.value = '';
-	});*/
+    /*searchInput.style.display = 'block';
+    searchInput.addEventListener('blur', () => {
+        searchbar.style.width = '40px';
+        searchInput.style.display = 'none';
+        searchInput.value = '';
+    });*/
 }
 
 
 
 async function DisplayHouse() {
-	const houses_rendering = document.getElementById('houses_rendering');
-	houses_rendering.innerHTML = "";
+    const houses_rendering = document.getElementById('houses_rendering');
+    houses_rendering.innerHTML = "";
 
-	await clearHouses();
-	const houses = await requesttoBackend("GET", 'triumph');
-	await PostHouses(houses);
-	houses.forEach((house, index) => {
-		const hous_html = `
+    await clearHouses();
+    const houses = await requesttoBackend("GET", 'triumph');
+    await PostHouses(houses);
+    houses.forEach((house, index) => {
+        const hous_html = `
         <article class="qodef-e qodef-grid-item qodef-item--custom post-2460 property type-property status-publish has-post-thumbnail hentry property-type-sell property-category-villas property-location-brooklyn property-tag-swimming-pool" data-id="2460">
             <div class="qodef-e-inner">
                 <div class="qodef-e-image-holder">
@@ -56,37 +56,10 @@ async function DisplayHouse() {
 
                     <div class="qodef-e-actions">
                         <div class="qodef-wishlist qodef-m">
-                            <button type="button" class="qodef-m-action-button qodef-property-spinner qodef--allowed-remove qodef-m-link" data-id="2460" data-title="Ajouter à la liste de souhaits" data-added-title="Ajouter à la liste de souhaits">
-                                <span class="qodef-m-icon">
-                                    <svg width="17" height="17" viewBox="0 0 17 17">
-                                        <g fill="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                            <path class="qodef-m-fav-inner" fill="none" d="M7.571 2.323a1 1 0 0 1 1.857 0l1.223 3.06a1 1 0 0 0 .841.625l3.232.285a1 1 0 0 1 .584 1.737l-2.527 2.293a1 1 0 0 0-.3.958l.749 3.36a1 1 0 0 1-1.516 1.059L9.037 14a1 1 0 0 0-1.074 0l-2.677 1.7a1 1 0 0 1-1.513-1.06l.749-3.36a1 1 0 0 0-.3-.958l-2.53-2.293a1 1 0 0 1 .584-1.737l3.232-.285a1 1 0 0 0 .841-.625Z" />
-                                            <path class="qodef-m-fav-outer" d="M8.50000095 2.49375057c-.08987045 0-.15235042.04231072-.18570995.12575054L7.0910511 5.67916107c-.25337982.63377-.83314037 1.06476975-1.51305008 1.12481976l-3.23159027.28536033c-.10766983.00951004-.15294933.07890988-.17196941.1354599-.01902008.05655003-.02488995.13922024.05515003.2118597l2.52661991 2.29319955c.47799969.43382072.68763924 1.0947113.54710007 1.72475051l-.74938011 3.35963059c-.01449013.06495953-.0037899.1169796.03366947.16371918.04036999.05037021.10447979.08292007.16331005.08292007.03472042 0 .06928062-.01126003.10564041-.03440952l2.67663002-1.70440006c.28940964-.18428994.6237297-.28170014.96681976-.28170014s.67741013.0974102.96681977.28170014l2.67663002 1.70440006c.03636074.02314949.07091999.03440952.1056404.03440952.05881024 0 .12290002-.03254986.16327954-.0829401.04924011-.06142998.04281044-.12284947.03370094-.16372013l-.7493801-3.35957909c-.14055062-.63004112.0690794-1.2909298.54707908-1.72477054l2.5266304-2.29319954c.08004952-.07264996.07417965-.15532017.05516052-.2118702-.01902008-.05655002-.06430053-.12594986-.17197036-.1354599L11.4220209 6.8039713c-.6799097-.06002998-1.25969028-.4910307-1.51306057-1.12481022L8.68571091 2.61951065c-.03335953-.08344936-.09585-.12576008-.18570996-.12576008m-.00000381-.79999923c.380476 0 .7609539.20958995.92854404.62876987l1.22324944 3.05965996c.13997078.35011005.46498012.59173012.84057999.62488937l3.23159027.28537083c.86851024.07668972 1.2297306 1.1506195.58411026 1.73660946l-2.52663994 2.29321003c-.26615048.24155998-.3821907.60737991-.30393028.95818996l.7493801 3.3596096c-.19408036.87005044-.76120948 1.54002-1.51313018 1.06121064l-2.67663002-1.70440007c-.32768059-.20866012-.74655914-.20866012-1.07423973 0l-2.67663002 1.70440007c-.75192166.47880935-1.70720959-.1911602-1.51313019-1.06121064l.74938011-3.3596096c.07824993-.35081005-.0377798-.71662998-.30393982-.95818996l-2.5266304-2.29321003c-.6456194-.58597946-.28439999-1.65991974.58411026-1.73660946l3.23159027-.28536034c.37559986-.03316974.7006092-.2747898.84057999-.62489986L7.57146072 2.3225212c.16758538-.41917992.54806042-.62876987.92853642-.62876987Z" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="qodef-m-tooltip">Ajouter à la liste de souhaits</span>
-                                <span class="qodef-m-spinner">
-                                    <svg width="20" height="20" viewBox="0 0 50 50">
-                                        <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="qodef-m-response"></div>
+                            <a href="property/details_view/index.html?ov=${house._id}">
+                                Voir Plus
+                            </a>
                         </div>
-                        <button type="button" class="qodef-m-action-button qodef-property-spinner qodef--compare" data-property-id="2460" data-title="Ajouter à la comparaison" data-added-title="Ajouter à la comparaison">
-                            <span class="qodef-m-icon">
-                                <svg width="13" height="13" viewBox="0 0 13 13">
-                                    <path fill="none" stroke="currentColor" d="M6.5 0v13M0 6.5h13" />
-                                </svg>
-                            </span>
-                            <span class="qodef-m-tooltip">Ajouter à la comparaison </span>
-                            <span class="qodef-m-spinner">
-                                <svg width="20" height="20" viewBox="0 0 50 50">
-                                    <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-                                </svg>
-                            </span>
-                        </button>
                     </div>
                     <div class="qodef-e-author">
                         <div class="qodef-e-author-image">
@@ -152,8 +125,8 @@ async function DisplayHouse() {
         </article>
         `;
 
-		houses_rendering.innerHTML += hous_html;
-	});
+        houses_rendering.innerHTML += hous_html;
+    });
 
 
 };
