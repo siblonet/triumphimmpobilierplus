@@ -8,7 +8,7 @@ const modala_job_open_view = document.querySelector('.modala_job_open_view');
 const modala_wrapa_job_open_view = document.querySelector('.modala_wrapa_job_open_view');
 const job_display = document.getElementById('job_display');*/
 
-function openCherche(params) {
+function openCherche() {
 	//const searchbar = document.getElementById('qodef-main-rev-holder');
 	const searchbar = document.querySelector('.opencherche')
 	//const searchInput = document.getElementById('searchInput');

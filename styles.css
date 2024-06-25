@@ -1,1 +1,9 @@
-
+@media screen and (max-width:992px) {
+    .opencherche {
+        display: none;
+        height: 0px;
+    }
+    .diplanotphone {
+        display: none;
+    }
+}
