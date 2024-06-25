@@ -12,6 +12,10 @@
 		var gtm4wp_datalayer_name = "dataLayer";
 		var dataLayer = dataLayer || [];
 	</script>
+
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
 	<link rel="dns-prefetch" href="http://export.qodethemes.com/" />
 	<link rel="dns-prefetch" href="http://accounts.google.com/" />
 	<link rel="dns-prefetch" href="http://static.zdassets.com/" />
@@ -556,24 +560,15 @@
 					<nav class="qodef-header-navigation" role="navigation" aria-label="Top Menu">
 					</nav>
 					<div class="qodef-widget-holder qodef--one">
-						<div id="newhome_membership_login_opener-2"
-							class="widget widget_newhome_membership_login_opener qodef-header-widget-area-one"
-							data-area="header-widget-one"></div>
+						<a class="qodef-m-link" style="cursor: pointer;" onclick="Deconnexion()">
+							<span class="qodef-m-text" style="color: #000000 !important;">
+								Deconnecter
+							</span>
+						</a>
 						<div id="newhome_core_real_estate_property_links-3"
 							class="widget widget_newhome_core_real_estate_property_links qodef-header-widget-area-one"
 							data-area="header-widget-one">
-							<div class="qodef-property-links qodef-m">
-								<a class="qodef-m-link" href="indexd49a.html?user-action=add-property">
-									<span class="qodef-m-icon">
-										<svg width="13" height="13" viewBox="0 0 13 13">
-											<path fill="none" stroke="currentColor" d="M6.5 0v13M0 6.5h13" />
-										</svg>
-									</span>
-									<span class="qodef-m-text">
-										Poster Maison
-									</span>
-								</a>
-							</div>
+
 						</div>
 					</div>
 				</div>
@@ -610,7 +605,11 @@
 			<nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
 				<ul id="menu-main-menu-3" class>
 					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2134">
-						<a href="/"><span class="qodef-menu-item-text">+ Ajouter Maison</span></a>
+						<a class="qodef-m-link" style="cursor: pointer;" onclick="Deconnexion()">
+							<span class="qodef-m-text" style="color: #000000 !important;">
+								Deconnecter
+							</span>
+						</a>
 					</li>
 				</ul>
 			</nav>
@@ -618,18 +617,41 @@
 
 
 		<div id="qodef-page-outer">
-			<div
-				class="qodef-page-title qodef-m qodef-title--standard qodef-alignment--left qodef-vertical-alignment--header-bottom qodef--has-image">
-				<div class="qodef-m-inner">
-					<div class="qodef-m-content qodef-content-grid ">
-						<h3 class="qodef-m-title entry-title">Tableau de bord</h3>
-						<p>Le site web est en cour de construction</p>
-					</div>
-				</div>
+			<div class="qodef-m-content qodef-content-grid">
+				<p id="usernamedis" style="font-weight: bold; font-size: 18px; line-height: 10px;"></p>
+				<p id="phonedis" style="line-height: 0px"></p>
 			</div>
-
 		</div>
 
+		<div id="" class="data_holder">
+			<a class="data1">
+				<p style="color: #ffffff;">En Location</p>
+				<p style="color: #fccf07; font-weight: bold;" id="locationa">0</p>
+			</a>
+			<a class="data2">
+				<p style="color: #ffffff;">En Vente</p>
+				<p style="color: #fccf07; font-weight: bold;" id="enventa">0</p>
+			</a>
+			<a class="data3">
+				<p style="color: #ffffff;">Terrain En Vente</p>
+				<p style="color: #fccf07; font-weight: bold;" id="enventeb">0</p>
+			</a>
+		</div>
+
+		<div id="" class="data_holdera">
+			<a class="data4">
+				<p style="color: #ffffff;">Rendez-Vous demandés</p>
+				<p style="color: #fcce00; font-weight: bold;" id="appoinuntraited">0</p>
+			</a>
+			<a class="data5">
+				<p style="color: #ffffff;">Rendez-Vous effectués</p>
+				<p style="color: #114903; font-weight: bold;" id="appointrated">0</p>
+			</a>
+			<a class="data6">
+				<p style="color: #ffffff;">Marché Conclu</p>
+				<p style="color: #ffffff; font-weight: bold;" id="appoincontracted">0</p>
+			</a>
+		</div>
 	</div>
 	<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script>

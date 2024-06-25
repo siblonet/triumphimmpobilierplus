@@ -1,0 +1,69 @@
+.data_holder {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    column-gap: 10px;
+    padding-top: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.data1,
+.data2,
+.data3 {
+    width: 200px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: rgba(6, 79, 138, 0.664);
+    line-height: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.data1:hover,
+.data2:hover,
+.data3:hover {
+    background-color: #007fbb;
+}
+
+
+
+
+
+.data_holdera {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    column-gap: 10px;
+    padding-top: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.data4,
+.data5,
+.data6 {
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #007fbb;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.data4:hover,
+.data5:hover,
+.data6:hover {
+    background-color: #007bff;
+}
