@@ -1,3 +1,11 @@
+body{
+    background: #eeeeee !important;
+}
+#qodef-page-wrapper, #qodef-page-header-inner, #qodef-page-header, #qodef-header-wrapper, #qodef-page-mobile-header, #qodef-page-mobile-header-inner{
+    background: #eeeeee !important;
+}
+
+
 .data_holder {
     display: flex;
     width: 100%;
@@ -16,12 +24,13 @@
     width: 200px;
     height: 150px;
     border-radius: 15px;
-    background-color: rgba(6, 79, 138, 0.664);
+    background-color: rgb(22, 27, 39);
     line-height: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
     padding: 25px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -30,8 +39,6 @@
 .data3:hover {
     background-color: #007fbb;
 }
-
-
 
 
 
@@ -60,10 +67,17 @@
     justify-content: center;
     padding: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
+
 }
 
 .data4:hover,
 .data5:hover,
 .data6:hover {
     background-color: #007bff;
+}
+
+#Dashboardb{
+    display: none;
+    
 }

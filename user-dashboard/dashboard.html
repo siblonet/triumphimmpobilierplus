@@ -528,6 +528,8 @@
 			background-color: #fbfbfb;
 		}
 	</style>
+	    <link rel="stylesheet" href="table.css">
+
 </head>
 
 <body
@@ -623,36 +625,76 @@
 			</div>
 		</div>
 
-		<div id="" class="data_holder">
-			<a class="data1">
-				<p style="color: #ffffff;">En Location</p>
-				<p style="color: #fccf07; font-weight: bold;" id="locationa">0</p>
-			</a>
-			<a class="data2">
-				<p style="color: #ffffff;">En Vente</p>
-				<p style="color: #fccf07; font-weight: bold;" id="enventa">0</p>
-			</a>
-			<a class="data3">
-				<p style="color: #ffffff;">Terrain En Vente</p>
-				<p style="color: #fccf07; font-weight: bold;" id="enventeb">0</p>
-			</a>
+		<div id="Dashboarda">
+			<div id="" class="data_holder">
+				<a class="data1" onclick="LoadData()">
+					<p style="color: #ffffff;">En Location</p>
+					<p style="color: #fccf07; font-weight: bold;" id="locationa">0</p>
+				</a>
+				<a class="data2">
+					<p style="color: #ffffff;">En Vente</p>
+					<p style="color: #fccf07; font-weight: bold;" id="enventa">0</p>
+				</a>
+				<a class="data3">
+					<p style="color: #ffffff;">Terrain En Vente</p>
+					<p style="color: #fccf07; font-weight: bold;" id="enventeb">0</p>
+				</a>
+			</div>
+
+			<div id="" class="data_holdera">
+				<a class="data4">
+					<p style="color: #ffffff;">Rendez-Vous demandés</p>
+					<p style="color: #fcce00; font-weight: bold;" id="appoinuntraited">0</p>
+				</a>
+				<a class="data5">
+					<p style="color: #ffffff;">Rendez-Vous effectués</p>
+					<p style="color: #114903; font-weight: bold;" id="appointrated">0</p>
+				</a>
+				<a class="data6">
+					<p style="color: #ffffff;">Marché Conclu</p>
+					<p style="color: #ffffff; font-weight: bold;" id="appoincontracted">0</p>
+				</a>
+			</div>
 		</div>
 
-		<div id="" class="data_holdera">
-			<a class="data4">
-				<p style="color: #ffffff;">Rendez-Vous demandés</p>
-				<p style="color: #fcce00; font-weight: bold;" id="appoinuntraited">0</p>
-			</a>
-			<a class="data5">
-				<p style="color: #ffffff;">Rendez-Vous effectués</p>
-				<p style="color: #114903; font-weight: bold;" id="appointrated">0</p>
-			</a>
-			<a class="data6">
-				<p style="color: #ffffff;">Marché Conclu</p>
-				<p style="color: #ffffff; font-weight: bold;" id="appoincontracted">0</p>
-			</a>
+		<div class="col-12" id="Dashboardb" style="margin-top: 30px;">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Type</th>
+						<th scope="col">Ville</th>
+						<th scope="col">Addresse</th>
+						<th scope="col">Coût</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody id="house_some_list">
+
+
+				</tbody>
+			</table>
 		</div>
+
+		<!--div class="col-12" id="Dashboardb">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Role</th>
+						<th scope="col">Full Name</th>
+						<th scope="col">Phone</th>
+						<th scope="col">Street</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody id="house_some_list">
+
+
+				</tbody>
+			</table>
+		</div-->
 	</div>
+
+
 	<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script>
 		window.RS_MODULES = window.RS_MODULES || {};
