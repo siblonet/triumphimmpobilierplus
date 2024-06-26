@@ -19,10 +19,9 @@ async function Connexion() {
             loading.setAttribute("onclick", "Connexion()");
         } else if (response.token) {
             const splo = response.token.split("°");
-            const isadmin = thisiswhat(`${splo[4]}`);
             //console.log(user_id);//66773ca3320d8b6299fff03a
             sessionStorage.setItem('triumph', response.token);
-            if (isadmin === "GIFV") {
+            if (splo[4] === "GIFV") {
                 window.location.href = "/dashboard";
             } else {
                 window.location.href = "/utilisateur";

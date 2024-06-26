@@ -33,9 +33,9 @@ async function CreationCompte() {
 
                 loading.setAttribute("onclick", "CreationCompte()");
             } else if (response.token) {
-                const isadmin = thisiswhat(`${splo[4]}`);
+                const splo = response.token.split("°");
                 sessionStorage.setItem('triumph', response.token);
-                if (isadmin === "GIFV") {
+                if (splo[4] === "GIFV") {
                     window.location.href = "/dashboard";
                 } else {
                     window.location.href = "/utilisateur";

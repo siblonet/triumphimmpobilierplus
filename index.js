@@ -34,8 +34,7 @@ const Login_Check = () => {
         loginmogile.href = "dashboard";//dashboard UZOHV
         loginmogile.classList.remove("qodef-login-opener")
         const splo = token.split("°");
-        const isadmin = thisiswhat(`${splo[4]}`);
-        if (isadmin === "GIFV") {
+        if (splo[4] === "GIFV") {
             toexpacelogi.href = "/dashboard";
             loginmogile.href = "/dashboard";
         } else {

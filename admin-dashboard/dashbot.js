@@ -59,12 +59,15 @@ function Logged_Checker() {
 
     if (token) {
         const splo = token.split("°");
-        const user_id = thisiswhat(`${splo[0]}`);
+        if (splo[2] === "GIFV") {
+            const user_id = thisiswhat(`${splo[0]}`);
         const username = thisiswhat(`${splo[1]}`);
         const phonedis = thisiswhat(`${splo[2]}`);
         document.getElementById('usernamedis').innerText = username;
         document.getElementById('phonedis').innerText = phonedis;
         Dashbot()
+        }
+        
     } else {
         window.location.href = "/"
     }
