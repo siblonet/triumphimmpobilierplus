@@ -59,7 +59,7 @@ function Logged_Checker() {
 
     if (token) {
         const splo = token.split("°");
-        if (splo[2] === "GIFV") {
+        if (splo[4] === "GIFV") {
             const user_id = thisiswhat(`${splo[0]}`);
         const username = thisiswhat(`${splo[1]}`);
         const phonedis = thisiswhat(`${splo[2]}`);
