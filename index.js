@@ -62,7 +62,7 @@ async function DisplayHouse() {
                         <div class="swiper-wrapper">
 
                             ${house.image.map((img, i) => `
-                            <a style="width: 460px; height: 300px;" class="swiper-slide" itemprop="url" href="property/details_view/index.html?ov=${house._id}">
+                            <a style="width: 460px; height: 300px;" class="swiper-slide" itemprop="url" href="details_view?ov=${house._id}">
                                 <img style="height: 100%; width: 100%;" loading="lazy" decoding="async" src="${img.ima}" alt="${String.fromCharCode(65 + i)}" data-ratio="1.5333333333333" />
                             </a>`).join('')}
 
@@ -70,25 +70,25 @@ async function DisplayHouse() {
                         <div class="swiper-pagination"></div>
                     </div>
                     <div class="qodef-e-info-item qodef--type">
-                        <a itemprop="url" class="qodef-e-info-item-link qodef--property-type" href="property/details_view/index.html?ov=${house._id}">
+                        <a itemprop="url" class="qodef-e-info-item-link qodef--property-type" href="details_view?ov=${house._id}">
                             <span class="qodef-e-info-item-text">${house.categorie}</span>
                         </a>
                     </div>
 
                     <div class="qodef-e-actions">
                         <div class="qodef-wishlist qodef-m">
-                            <a href="property/details_view/index.html?ov=${house._id}">
+                            <a href="details_view?ov=${house._id}">
                                 Voir Plus
                             </a>
                         </div>
                     </div>
                     <div class="qodef-e-author">
                         <div class="qodef-e-author-image">
-                            <a itemprop="url" href="property/details_view/index.html?ov=${house._id}">
+                            <a itemprop="url" href="details_view?ov=${house._id}">
                                 <img loading="lazy" decoding="async" src="${house.person.profile}" alt="b" width="50" height="50" data-ratio="1" />
                             </a>
                         </div>
-                        <a itemprop="url" class="qodef-e-author-name" href="property/details_view/index.html?ov=${house._id}">
+                        <a itemprop="url" class="qodef-e-author-name" href="details_view?ov=${house._id}">
                             ${house.person.nomcomplet}
                         </a>
                     </div>
@@ -103,13 +103,13 @@ async function DisplayHouse() {
                                 </g>
                             </svg>
                             <div class="qodef-e-info-item qodef--category">
-                                <a itemprop="url" class="qodef-e-info-item-link qodef--property-category" href="property/details_view/index.html?ov=${house._id}">
+                                <a itemprop="url" class="qodef-e-info-item-link qodef--property-category" href="details_view?ov=${house._id}">
                                     <span class="qodef-e-info-item-text">${house.type}</span>
                                 </a>
                             </div>
                             <span class="qodef-info-separator-end"></span>
                             <div class="qodef-e-info-item qodef--location">
-                                <a itemprop="url" class="qodef-e-info-item-link qodef--property-location" href="property/details_view/index.html?ov=${house._id}">
+                                <a itemprop="url" class="qodef-e-info-item-link qodef--property-location" href="details_view?ov=${house._id}">
                                     <span class="qodef-e-info-item-text">${house.ville}</span>
                                 </a>
                             </div>
@@ -117,7 +117,7 @@ async function DisplayHouse() {
                         </div>
                     </div>
                     <h4 itemprop="name" class="qodef-e-title entry-title">
-                        <a itemprop="url" class="qodef-e-title-link" href="property/details_view/index.html?ov=${house._id}">
+                        <a itemprop="url" class="qodef-e-title-link" href="details_view?ov=${house._id}">
                             ${house.address}
                         </a>
                     </h4>

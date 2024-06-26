@@ -33,9 +33,13 @@ async function CreationCompte() {
 
                 loading.setAttribute("onclick", "CreationCompte()");
             } else if (response.token) {
-                console.log(response.token);
+                const isadmin = thisiswhat(`${splo[4]}`);
                 sessionStorage.setItem('triumph', response.token);
-                window.location.href = "/dashboard";
+                if (isadmin === "GIFV") {
+                    window.location.href = "/dashboard";
+                } else {
+                    window.location.href = "/utilisateur";
+                }
             } else if (response.ee) {
                 alert(`Le ${input_tel} est déjà associé à un compte`);
                 loading.setAttribute("onclick", "CreationCompte()");

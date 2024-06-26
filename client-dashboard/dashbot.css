@@ -1,0 +1,297 @@
+@import url("https://fonts.googleaps.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.sidebara {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 110px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #ffffff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background-color: var(--sidebar);
+}
+
+.sidebara:hover {
+    width: 240px;
+    transition: 0.5s;
+}
+
+.logo {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+}
+
+.logo span {
+    color: #333333;
+    overflow: hidden;
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover,
+.active {
+    background: rgba(31, 45, 70, 0.966);
+}
+
+.menu a {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.menu a i {
+    font-size: 1.2rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/** @@@@@@@@@@@@@@@@@@@@@@@@@ main @@@@@@@@@@@@@@@@@@**/
+.main--content {
+    position: relative;
+    background: rgba(21, 30, 47, 1);
+    width: 100%;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.main--content::-webkit-scrollbar-track {
+    background-color: #101827;
+}
+
+.main--content::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(31, 45, 70, 0.966);
+}
+
+.main--content::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background-color: rgba(31, 45, 70, 0.966);
+    box-shadow: inset 0 0 6px rgba(21, 30, 47, 1);
+    -webkit-box-shadow: inset 0 0 6px rgba(21, 30, 47, 1);
+}
+
+
+
+.header--wrapper img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.header--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgba(21, 30, 47, 1);
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+
+.header--title {
+    color: #e0e0e0cb;
+}
+
+.user--info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search--box {
+    background: #101827;
+    border-radius: 15px;
+    color: #e0e0e058;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+}
+
+.search--box input {
+    background: transparent;
+    padding: 10px;
+}
+
+.search--box i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.search--box i:hover {
+    transform: scale(1.2);
+}
+
+/** @@@@@@@@@@@@@@@@@@@@@@@@@ cart contents @@@@@@@@@@@@@@@@@@**/
+.card--container {
+    background: rgba(21, 30, 47, 1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.card--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main--title {
+    color: #e0e0e0cb;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.card--one {
+    background: #101827;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 290px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.card--one:hover {
+    transform: translateY(-5px);
+}
+
+.card--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.amount {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 200;
+    color: #eeeeee;
+}
+
+.amount-value {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+.icon {
+    color: #eeeeee;
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    background: rgb(21, 94, 15);
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+}
+
+.card-detail {
+    font-size: 18px;
+    color: #aaaaaa;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* @@@@@@@  color css   @@@@@@@*/
+
+.light-blue {
+    background: rgba(31, 45, 70, 0.966);
+}
+
+.light-purple {
+    background: rgba(66, 31, 70, 0.966);
+}
+
+.light-greed {
+    background: rgba(31, 66, 70, 0.966);
+}
+
+.light-orange {
+    background: rgba(70, 52, 31, 0.966);
+}
+
+
+
+.dark-blue {
+    background: rgba(31, 45, 70, 0.966);
+}
+
+.dark-purple {
+    background: rgb(99, 1, 99);
+}
+
+.dark-green {
+    background: rgb(2, 83, 63);
+}
+
+.dark-orange {
+    background: rgb(155, 101, 2);
+}

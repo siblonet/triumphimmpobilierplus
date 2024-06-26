@@ -1,4 +1,20 @@
 [[redirects]]
 from = "dashboard"
-to = "/user-dashboard/dashboard.html"
+to = "/admin-dashboard/dashbot.html"
 status = 200
+
+[[redirects]]
+from = "utilisateur"
+to = "/client-dashboard/dashbot.html"
+status = 200
+
+
+
+[[redirects]]
+from = "/detail_view"
+to = "/property/details_view/index.html"
+status = 200
+
+[[redirects]]
+from = "details_view*"
+to = "/detail_view:splat"

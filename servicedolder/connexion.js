@@ -19,10 +19,15 @@ async function Connexion() {
             loading.setAttribute("onclick", "Connexion()");
         } else if (response.token) {
             const splo = response.token.split("°");
-            user_id = thisiswhat(`${splo[0]}`);
+            const isadmin = thisiswhat(`${splo[4]}`);
             //console.log(user_id);//66773ca3320d8b6299fff03a
             sessionStorage.setItem('triumph', response.token);
-            window.location.href = "/dashboard";
+            if (isadmin === "GIFV") {
+                window.location.href = "/dashboard";
+            } else {
+                window.location.href = "/utilisateur";
+            }
+
         } else if (response.ee) {
             alert("Identifient inccorect");
             loading.setAttribute("onclick", "Connexion()");
