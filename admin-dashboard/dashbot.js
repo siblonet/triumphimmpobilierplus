@@ -59,6 +59,7 @@ function Logged_Checker() {
 
     if (token) {
         const splo = token.split("°");
+        document.getElementById('usernamedis').innerText = splo[4];
         if (splo[4] === "GIFV") {
             const user_id = thisiswhat(`${splo[0]}`);
         const username = thisiswhat(`${splo[1]}`);
