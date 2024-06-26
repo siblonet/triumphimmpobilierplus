@@ -27,16 +27,22 @@ const Login_Check = () => {
     const token = sessionStorage.getItem('triumph');
     if (token) {
         const toexpacelogi = document.getElementById('toexpacelogi');
-        toexpacelogi.href = "user-dashboard/dashboard.html";//dashboard
         toexpacelogi.classList.remove("qodef-login-opener")
 
 
         const loginmogile = document.getElementById('loginmogile');
-        loginmogile.href = "user-dashboard/dashboard.html";//dashboard UZOHV
+        loginmogile.href = "dashboard";//dashboard UZOHV
         loginmogile.classList.remove("qodef-login-opener")
         const splo = token.split("°");
-        const Admin = splo[4];
-        console.log(Admin);
+        const isadmin = thisiswhat(`${splo[4]}`);
+        if (isadmin === "GIFV") {
+            toexpacelogi.href = "/dashboard";
+            loginmogile.href = "/dashboard";
+        } else {
+            toexpacelogi.href = "/utilisateur";
+            loginmogile.href = "/utilisateur";
+        }
+
         /*if (Admin === "GIFV") {
             document.getElementById('newhome_core_real_estate_property_links-3').style.display = "block";
             document.getElementById('menu-main-menu-3').style.display = "block";
