@@ -1,0 +1,1 @@
+let variable_store = "../assets/logo.jpeg";

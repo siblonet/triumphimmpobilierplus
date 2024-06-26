@@ -54,21 +54,29 @@ const Dashbot = async () => {
 
 
 
-function Logged_Checker() {
+async function Logged_Checker() {
     const token = sessionStorage.getItem('triumph');
 
     if (token) {
         const splo = token.split("°");
-        document.getElementById('usernamedis').innerText = splo[4];
         if (splo[4] === "GIFV") {
             const user_id = thisiswhat(`${splo[0]}`);
-        const username = thisiswhat(`${splo[1]}`);
-        const phonedis = thisiswhat(`${splo[2]}`);
-        document.getElementById('usernamedis').innerText = username;
-        document.getElementById('phonedis').innerText = phonedis;
-        Dashbot()
+            const username = thisiswhat(`${splo[1]}`);
+            const phonedis = thisiswhat(`${splo[2]}`);
+            document.getElementById('usernamedis').innerText = username;
+            document.getElementById('phonedis').innerText = phonedis;
+            Dashbot();
+            try {
+                const mymine = await requesttoBackend("GET", `usertriumph/${user_id}`);
+                if (mymine.profile) {
+                    variable_store = mymine.profile
+                    document.getElementById('profile').src = mymine.profile;
+                }
+            } catch (error) {
+
+            }
         }
-        
+
     } else {
         window.location.href = "/"
     }
@@ -78,21 +86,88 @@ Logged_Checker();
 
 
 const Navigator_Shows = async (who) => {
-  /*  const listing_data = document.getElementById("listing-data");
+    const listing_data = document.getElementById("listing-data");
     if (who === "home") {
+        document.querySelector(".home").classList.add("active");
+        document.querySelector(".Users").classList.remove("active");
+        document.querySelector(".location").classList.remove("active");
+        document.querySelector(".vente").classList.remove("active");
+        document.querySelector(".rendevous").classList.remove("active");
+
         Homedata(listing_data)
     } else if (who === "Users") {
+        document.querySelector(".Users").classList.add("active");
+        document.querySelector(".home").classList.remove("active");
+        document.querySelector(".location").classList.remove("active");
+        document.querySelector(".vente").classList.remove("active");
+        document.querySelector(".rendevous").classList.remove("active");
+
         Userdata(listing_data)
 
     } else if (who === "location") {
-        Locationdata(listing_data)
+        document.querySelector(".location").classList.add("active");
+        document.querySelector(".home").classList.remove("active");
+        document.querySelector(".Users").classList.remove("active");
+        document.querySelector(".vente").classList.remove("active");
+        document.querySelector(".rendevous").classList.remove("active");
+        listing_data.innerHTML = `
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span id="phonedis">Espace Privée</span>
+                <h2 id="usernamedis">John Kokar</h2>
+            </div>
+            <div class="user--info">
+                <a class="openar" onclick="openMany()">
+                    <div class="spana"></div>
+                    <div class="spanb"></div>
+                    <div class="spanc"></div>
+                </a>
+                <div class="search--box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Recherche" />
+                </div>
+                <img id="profile" src="${variable_store}" alt="">
+            </div>
+        </div>
+        `;
+        Locationdata(listing_data);
     } else if (who === "vente") {
+        document.querySelector(".vente").classList.add("active");
+        document.querySelector(".home").classList.remove("active");
+        document.querySelector(".Users").classList.remove("active");
+        document.querySelector(".location").classList.remove("active");
+        document.querySelector(".rendevous").classList.remove("active");
+        listing_data.innerHTML = `
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span id="phonedis">Espace Privée</span>
+                <h2 id="usernamedis">John Kokar</h2>
+            </div>
+            <div class="user--info">
+                <a class="openar" onclick="openMany()">
+                    <div class="spana"></div>
+                    <div class="spanb"></div>
+                    <div class="spanc"></div>
+                </a>
+                <div class="search--box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Recherche" />
+                </div>
+                <img id="profile" src="${variable_store}" alt="">
+            </div>
+        </div>
+        `;
         Ventedata(listing_data)
     } else if (who === "rendevous") {
+        document.querySelector(".rendevous").classList.add("active");
+        document.querySelector(".home").classList.remove("active");
+        document.querySelector(".Users").classList.remove("active");
+        document.querySelector(".location").classList.remove("active");
+        document.querySelector(".vente").classList.remove("active");
         Rendevousdata(listing_data)
     } else {
 
-    }*/
+    }
 
 }
 
@@ -104,4 +179,18 @@ function Disconnexion() {
         sessionStorage.clear();
         window.location.href = "/"
     }
+}
+
+
+function openMany() {
+    const sidebar = document.querySelector(".sidebara");
+    sidebar.style.marginLeft = '0';
+    sidebar.style.transition = 'all 0.5s linear';
+}
+
+
+function CloseMany() {
+    const sidebar = document.querySelector(".sidebara");
+    sidebar.style.marginLeft = '-240px';
+    sidebar.style.transition = 'all 0.5s linear';
 }

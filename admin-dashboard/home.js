@@ -1,78 +1,7 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Adminitratif</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./dashbot_responcive.css">
-    <link rel="stylesheet" href="./dashbot.css">
-    <link rel="icon" href="../assets/logo.jpeg" />
-    <link rel="stylesheet" href="./style.css">
-
-</head>
-
-<body>
-    <div class="sidebara">
-        <div class="logo">
-            <img src="../assets/logo.jpeg" alt="">
-            <span>Triumph I Plus</span>
-        </div>
-        <ul class="menu">
-            <li class="home active">
-                <a onclick="Navigator_Shows('home')">
-                    <i class="fas fa-home"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="Users">
-                <a onclick="Navigator_Shows('Users')">
-                    <i class="fas fa-users"></i>
-                    <span>Utilisateurs</span>
-                </a>
-            </li>
-            <li class="location">
-                <a onclick="Navigator_Shows('location')">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Location</span>
-                </a>
-            </li>
-            <li class="vente">
-                <a onclick="Navigator_Shows('vente')">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>En vente</span>
-                </a>
-            </li>
-            <li class="rendevous">
-                <a onclick="Navigator_Shows('rendevous')">
-                    <i class="fas fa-envelope"></i>
-                    <span>Rendez-vous</span>
-                </a>
-            </li>
-            <li class="logout">
-                <a onclick="Disconnexion()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Sortie</span>
-                </a>
-            </li>
-
-            <li class="close">
-                <a onclick="CloseMany()">
-                    <i class="fas fa-close"></i>
-                    <span>Reduire</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
-    <div class="app-content main--content" id="listing-data">
-        <div class="header--wrapper">
+const Homedata = async (listing_data) => {
+    listing_data.innerHTML = `
+    
+    <div class="header--wrapper">
             <div class="header--title">
                 <span id="phonedis">Espace Privée</span>
                 <h2 id="usernamedis">John Kokar</h2>
@@ -87,11 +16,9 @@
                     <i class="fa-solid fa-search"></i>
                     <input type="text" placeholder="Recherche" />
                 </div>
-                <img id="profile" src="../assets/logo.jpeg" alt="">
+                <img id="profile" src="${variable_store}" alt="">
             </div>
         </div>
-
-
 
         <div class="card--container">
             <h3 class="main--title">Données Statistique</h3>
@@ -102,7 +29,7 @@
                             <span class="title">
                                 Total Location
                             </span>
-                            <span class="amount-value" id="amount_value_louer">
+                            <span class="amount-value"  id="amount_value_louer">
                                 0.0 F
                             </span>
                         </div>
@@ -225,25 +152,12 @@
                 <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ table rows starts @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
                 <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ table rows starts @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
                 <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ table rows starts @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-
+                
 
             </div>
         </div>
-    </div>
+    `;
 
-    <script src="../initors/variable_store.js"></script>
-    <script src="../initors/convertisseur.js"></script>
-    <script src="../initors/requesthttps.js"></script>
-    <script src="../initors/router.js"></script>
-    <script src="../initors/database_handl.js"></script>
-    <script src="../servicedolder/database_service.js"></script>
-    <script src="./home.js"></script>
-    <script src="./userdata.js"></script>
-    <script src="./locationdata.js"></script>
-    <script src="./ventesdata.js"></script>
-    <script src="./rendevousdata.js"></script>
-    <script src="./dashbot.js"></script>
-
-</body>
-
-</html>
+    Dashbot();
+ 
+}

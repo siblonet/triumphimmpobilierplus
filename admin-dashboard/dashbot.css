@@ -13,6 +13,10 @@ body {
     display: flex;
 }
 
+.openar {
+    display: none;
+}
+
 .sidebara {
     position: sticky;
     top: 0;
@@ -96,6 +100,14 @@ body {
     width: 100%;
 }
 
+
+.close {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
 
 /** @@@@@@@@@@@@@@@@@@@@@@@@@ main @@@@@@@@@@@@@@@@@@**/
 .main--content {
@@ -294,4 +306,34 @@ body {
 
 .dark-orange {
     background: rgb(155, 101, 2);
+}
+
+.btn {
+    padding: 7px;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.btn-danger {
+    background: rgba(155, 2, 35, 0.452);
+    color: rgb(255, 4, 4);
+    cursor: pointer;
+}
+
+.btn-warnin {
+    background: rgba(175, 115, 3, 0.452);
+    color: rgb(255, 211, 0);
+    cursor: pointer;
+}
+
+.btn-success {
+    background: rgba(3, 110, 84, 0.452);
+    color: rgb(0, 255, 64);
+    cursor: pointer;
+}
+
+.btn-done {
+    background: rgba(34, 72, 139, 0.452);
+    color: #007bff;
+    cursor: pointer;
 }

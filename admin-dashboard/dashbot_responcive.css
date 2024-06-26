@@ -1,0 +1,80 @@
+@media only screen and (max-width: 992px) {
+    .sidebara {
+        margin-left: -110px;
+        transition: all 0.5s linear;
+    }
+
+    .sidebara:hover {
+        width: 240px !important;
+        transition: 0.5s;
+    }
+
+    .header--title {
+        display: none;
+    }
+
+    .header--wrapper img {
+        width: 40px !important;
+        height: 40px !important;
+        cursor: default !important;
+    }
+
+    .header--wrapper {
+        display: block !important;
+        padding: 10px 1rem !important;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .user--info {
+        justify-content: space-between !important;
+    }
+
+    .search--box {
+        padding: 2.5px 12px !important;
+        width: 65% !important;
+    }
+
+    .openar {
+        background: "transparent";
+        height: 40px !important;
+        border-radius: 5px;
+        display: block !important;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .openar div {
+        height: 5px;
+        background: #ffffff;
+        overflow: hidden;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .openar .spana {
+        width: 32px;
+    }
+
+    .openar .spanb {
+        width: 28px;
+    }
+
+    .openar .spanc {
+        width: 20px;
+    }
+
+    .logout {
+        bottom: 25% !important;
+    }
+
+    .close {
+        display: block !important;
+        bottom: 19% !important;
+    }
+
+    .close i {
+        color: rgba(5, 134, 117, 0.911);
+    }
+}
